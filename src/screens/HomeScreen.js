@@ -32,9 +32,14 @@ class HomeScreen extends Component {
       activeImageIndex: 0
     }
     this.images = [
-      "../assets/images/house1.jpg",
-      "../assets/images/house2.png",
-      "../assets/images/house3.jpg"
+      "../assets/images/PON.jpg",
+      "../assets/images/PON2.jpg",
+      "../assets/images/MIL.png",
+      "../assets/images/MIL2.jpg",
+      "../assets/images/MIL3.jpg",
+      "../assets/images/HAY.png",
+      "../assets/images/HAY2.jpg",
+      "../assets/images/CLA.png"
     ]
   }
 
