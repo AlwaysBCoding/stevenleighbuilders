@@ -29,7 +29,7 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  background-color: #191919;
+  background-color: #979695;
   padding-left: 100px;
   padding-right: 100px;
   min-height: 100vh; }
@@ -37,11 +37,50 @@ hr {
 .top-space {
   height: 60px; }
 
+.title-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .title-text-container .title-text {
+    font-size: 28px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 500;
+    width: 860px; }
+
+.footer {
+  height: 60px;
+  background-color: coral; }
+
 .screen {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch; }
+
+.screen.home-screen .image-carousel {
+  cursor: pointer;
+  height: 571px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .screen.home-screen .image-carousel .carousel-enter {
+    opacity: 0.01;
+    transition: opacity 1s ease-in; }
+  .screen.home-screen .image-carousel .carousel-enter.carousel-enter-active {
+    opacity: 1; }
+  .screen.home-screen .image-carousel .carousel-leave {
+    display: none; }
+  .screen.home-screen .image-carousel .carousel-leave.carousel-leave-active {
+    display: none; }
+  .screen.home-screen .image-carousel .carousel-appear {
+    opacity: 0.01;
+    transition: opacity 1s ease-in; }
+  .screen.home-screen .image-carousel .carousel-appear.carousel-appear-active {
+    opacity: 1; }
 
 .screen.inventions-index p {
   color: #f4f4ec; }
@@ -49,85 +88,5 @@ hr {
     color: #aa3333; }
   .screen.inventions-index p.invention {
     margin-bottom: 5px; }
-
-.screen.invention-show h1 {
-  font-size: 24px;
-  margin-bottom: 5px; }
-.screen.invention-show .invention-title {
-  font-size: 24px; }
-.screen.invention-show .invention-description {
-  font-size: 18px; }
-
-.screen.create-invention .invention-title, .screen.create-invention .invention-description, .screen.create-invention .invention-username, .screen.create-invention .invention-email {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 14px; }
-.screen.create-invention textarea {
-  height: 80px;
-  width: 300px; }
-.screen.create-invention input {
-  width: 200px; }
-.screen.create-invention .submit {
-  width: 30%;
-  cursor: pointer;
-  background-color: #aa3333;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-.screen.create-invention .invention-bits, .screen.create-invention .invention-materials {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center; }
-  .screen.create-invention .invention-bits .bits-list, .screen.create-invention .invention-bits .materials-list, .screen.create-invention .invention-materials .bits-list, .screen.create-invention .invention-materials .materials-list {
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center; }
-.screen.create-invention .tag {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #339baa;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #191919; }
-  .screen.create-invention .tag:not(:last-child) {
-    margin-right: 10px; }
-  .screen.create-invention .tag .tagX {
-    margin-left: 5px;
-    cursor: pointer; }
-.screen.create-invention .bits-input, .screen.create-invention .materials-input {
-  height: 30px;
-  font-size: 16px;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 200px;
-  box-sizing: border-box; }
-.screen.create-invention .bits-input-container, .screen.create-invention .materials-input-container {
-  width: 200px; }
-  .screen.create-invention .bits-input-container .bits-input-dropdown, .screen.create-invention .bits-input-container .materials-input-dropdown, .screen.create-invention .materials-input-container .bits-input-dropdown, .screen.create-invention .materials-input-container .materials-input-dropdown {
-    width: 200px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    align-items: stretch;
-    position: fixed;
-    background-color: #339baa; }
-    .screen.create-invention .bits-input-container .bits-input-dropdown .bits-search-result, .screen.create-invention .bits-input-container .bits-input-dropdown .materials-search-result, .screen.create-invention .bits-input-container .materials-input-dropdown .bits-search-result, .screen.create-invention .bits-input-container .materials-input-dropdown .materials-search-result, .screen.create-invention .materials-input-container .bits-input-dropdown .bits-search-result, .screen.create-invention .materials-input-container .bits-input-dropdown .materials-search-result, .screen.create-invention .materials-input-container .materials-input-dropdown .bits-search-result, .screen.create-invention .materials-input-container .materials-input-dropdown .materials-search-result {
-      width: 100%;
-      cursor: pointer;
-      padding-left: 5px; }
 
 /*# sourceMappingURL=App.css.map */

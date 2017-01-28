@@ -1,72 +1,88 @@
 import React, { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { Link } from 'react-router'
 import Spinner from '../components/Spinner'
-import LittleBitsAPI from '../services/LittleBitsAPI'
 import _ from 'lodash'
+
+class Carousel extends Component {
+
+  render() {
+    return (
+      <div className="image-carousel">
+        <ReactCSSTransitionGroup
+          transitionName="carousel"
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={0.01}>
+          <img key={this.props.imageSource} className="active-carousel-image" src={this.props.imageSource} />
+        </ReactCSSTransitionGroup>
+      </div>
+    )
+  }
+
+}
 
 class HomeScreen extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      isLoadingData: true,
-      inventions: []
+      activeImageIndex: 0
+    }
+    this.images = [
+      "../assets/images/house1.jpg",
+      "../assets/images/house2.png",
+      "../assets/images/house3.jpg"
+    ]
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(
+      this._cycleImageNatural.bind(this), 10000
+    )
+  }
+
+  _cycleImageNatural() {
+    var counter = this.state.activeImageIndex
+    if (counter >= (this.images.length - 1)) {
+      this.setState({ activeImageIndex: 0 })
+    } else {
+      this.setState({ activeImageIndex: counter + 1 })
     }
   }
 
-  componentWillMount() {
-    LittleBitsAPI.getInventions()
-    .then((data) => {
-      this.setState({
-        isLoadingData: false,
-        inventions: data
-      })
-    })
+  _cycleImage() {
+    var counter = this.state.activeImageIndex
+    if (counter >= (this.images.length - 1)) {
+      this.setState({ activeImageIndex: 0 })
+    } else {
+      this.setState({ activeImageIndex: counter + 1 })
+    }
+    clearInterval(this.interval)
+    this.interval = setInterval(
+      this._cycleImageNatural.bind(this), 10000
+    )
   }
 
   render() {
-    var MainContent, Actions
-    var Inventions = []
+    var MainContent
 
-    if(this.state.isLoadingData) {
-      MainContent =
-      <div className="main-content">
-        <div className="top-space"></div>
-        <Spinner />
+    MainContent =
+    <div className="main-content">
+      <div className="top-space"></div>
+      <div className="title-text-container">
+        <p className="title-text">STEVEN LEIGH BUILDER</p>
       </div>
-
-      Actions =
-      <div />
-    } else {
-      _.each(this.state.inventions, (invention) => {
-        Inventions.push(
-          <Link key={invention.id} to={`/inventions/${invention.id}`}>
-            <p className="invention">{invention.title}</p>
-          </Link>
-        )
-      })
-
-      MainContent =
-      <div className="main-content">
-        <div className="top-space"></div>
-        <h1>Inventions List</h1>
-        <hr style={{marginTop: "10px", marginBottom: "25px", height: "1px", width: "100%", backgroundColor: "white"}} />
-        {Inventions}
+      <div className="image-carousel" onClick={() => { this._cycleImage() }}>
+        <Carousel imageSource={this.images[this.state.activeImageIndex]} />
       </div>
-
-      Actions =
-      <div className="actions-container">
-        <Link to="/inventions/create">
-          <p>Add New Invention</p>
-        </Link>
-      </div>
-    }
+      <div className="footer"></div>
+    </div>
 
     return (
-      <div className="screen home-screen inventions-index">
+      <div className="screen home-screen">
         {MainContent}
-        <hr style={{marginTop: "10px", marginBottom: "50px", height: "1px", width: "100%", backgroundColor: "white"}} />
-        {Actions}
       </div>
     )
 

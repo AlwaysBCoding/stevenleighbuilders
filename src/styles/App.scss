@@ -39,6 +39,7 @@ hr {
 
 // Constants
 $top-segment-height: 60px;
+$footer-height: 60px;
 $top-background-color: #222;
 
 // Layout
@@ -48,7 +49,7 @@ $top-background-color: #222;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  background-color: $smooth-gray;
+  background-color: #979695;
   padding-left: 100px;
   padding-right: 100px;
   min-height: 100vh;
@@ -56,6 +57,27 @@ $top-background-color: #222;
 
 .top-space {
   height: $top-segment-height;
+  // background-color: yellow;
+}
+
+.title-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title-text {
+    font-size: 28px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 500;
+    width: 860px;
+  }
+
+}
+
+.footer {
+  height: $footer-height;
+  background-color: coral;
 }
 
 .screen {
@@ -66,6 +88,52 @@ $top-background-color: #222;
 }
 
 // Application Specific Screens
+.screen.home-screen {
+
+  .image-carousel {
+
+    cursor: pointer;
+    height: 571px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .carousel-enter {
+      opacity: 0.01;
+      transition: opacity 1s ease-in;
+    }
+
+    .carousel-enter.carousel-enter-active {
+      opacity: 1;
+    }
+
+    .carousel-leave {
+      display: none;
+    }
+
+    .carousel-leave.carousel-leave-active {
+      display: none;
+    }
+
+    .carousel-appear {
+      opacity: 0.01;
+      transition: opacity 1s ease-in;
+    }
+
+    .carousel-appear.carousel-appear-active {
+      opacity: 1;
+    }
+
+    .active-carousel-image {
+
+    }
+
+  }
+}
+
 .screen.inventions-index {
   p {
     color: $ecru;
@@ -75,126 +143,4 @@ $top-background-color: #222;
       margin-bottom: 5px;
     }
   }
-}
-
-.screen.invention-show {
-  h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-
-  .invention-title {
-    font-size: 24px;
-  }
-
-  .invention-description {
-    font-size: 18px;
-  }
-
-  .invention-user {
-
-  }
-
-}
-
-.screen.create-invention {
-
-  .invention-title, .invention-description, .invention-username, .invention-email {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-
-  textarea {
-    height: 80px;
-    width: 300px;
-  }
-
-  input {
-    width: 200px;
-  }
-
-  .submit {
-    width: 30%;
-    cursor: pointer;
-    background-color: $smooth-red;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .invention-bits, .invention-materials {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    .bits-list, .materials-list {
-      margin-left: 10px;
-      margin-right: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  }
-
-  .tag {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: $smooth-cyan;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    color: $smooth-gray;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-
-    .tagX {
-      margin-left: 5px;
-      cursor: pointer;
-    }
-  }
-
-  .bits-input, .materials-input {
-    height: 30px;
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 200px;
-    box-sizing: border-box;
-  }
-
-  .bits-input-container, .materials-input-container {
-    width: 200px;
-
-    .bits-input-dropdown, .materials-input-dropdown {
-      width: 200px !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
-      align-items: stretch;
-      position: fixed;
-      background-color: $smooth-cyan;
-
-      .bits-search-result, .materials-search-result {
-        width: 100%;
-        cursor: pointer;
-        padding-left: 5px;
-      }
-    }
-
-  }
-
 }
