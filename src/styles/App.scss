@@ -110,14 +110,6 @@ $top-background-color: #222;
       opacity: 1;
     }
 
-    .carousel-leave {
-      display: none;
-    }
-
-    .carousel-leave.carousel-leave-active {
-      display: none;
-    }
-
     .carousel-appear {
       opacity: 0.01;
       transition: opacity 1s ease-in;
@@ -127,8 +119,8 @@ $top-background-color: #222;
       opacity: 1;
     }
 
-    .active-carousel-image {
-
+    img:not(:nth-child(1)) {
+      display: none;
     }
 
   }

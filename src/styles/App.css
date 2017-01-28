@@ -72,15 +72,13 @@ hr {
     transition: opacity 1s ease-in; }
   .screen.home-screen .image-carousel .carousel-enter.carousel-enter-active {
     opacity: 1; }
-  .screen.home-screen .image-carousel .carousel-leave {
-    display: none; }
-  .screen.home-screen .image-carousel .carousel-leave.carousel-leave-active {
-    display: none; }
   .screen.home-screen .image-carousel .carousel-appear {
     opacity: 0.01;
     transition: opacity 1s ease-in; }
   .screen.home-screen .image-carousel .carousel-appear.carousel-appear-active {
     opacity: 1; }
+  .screen.home-screen .image-carousel img:not(:nth-child(1)) {
+    display: none; }
 
 .screen.inventions-index p {
   color: #f4f4ec; }

@@ -13,8 +13,9 @@ class Carousel extends Component {
           transitionName="carousel"
           transitionAppear={true}
           transitionAppearTimeout={1000}
+          transitionEnter={true}
           transitionEnterTimeout={1000}
-          transitionLeaveTimeout={0.01}>
+          transitionLeave={false}>
           <img key={this.props.imageSource} className="active-carousel-image" src={this.props.imageSource} />
         </ReactCSSTransitionGroup>
       </div>
