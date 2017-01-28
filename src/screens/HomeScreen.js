@@ -78,12 +78,23 @@ class HomeScreen extends Component {
     <div className="main-content">
       <div className="top-space"></div>
       <div className="title-text-container">
-        <p className="title-text">STEVEN LEIGH BUILDER</p>
+        <div className="title-text">
+          <p>STEVEN LEIGH</p>
+          <p>BUILDER</p>
+        </div>
       </div>
       <div className="image-carousel" onClick={() => { this._cycleImage() }}>
         <Carousel imageSource={this.images[this.state.activeImageIndex]} />
       </div>
-      <div className="footer"></div>
+      <div className="footer">
+        <div className="footer-content">
+          <p className="item address">PO BOX 877 LOCUST VALLEY NY 11560</p>
+          <p className="divider">|</p>
+          <p className="item phone">TEL (516) 214-0412</p>
+          <p className="divider">|</p>
+          <p className="item email">INFO@STEVENLEIGHBUILDERS.COM</p>
+        </div>
+      </div>
     </div>
 
     return (

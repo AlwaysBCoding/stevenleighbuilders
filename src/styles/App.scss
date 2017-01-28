@@ -67,17 +67,53 @@ $top-background-color: #222;
   align-items: center;
 
   .title-text {
-    font-size: 28px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 500;
     width: 860px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    p {
+      font-size: 28px;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 500;
+
+      &:nth-child(1) {
+        color: darken(rgba(255, 255, 255, 1), 0%);
+      }
+      &:nth-child(2) {
+        margin-left: 10px;
+        color: darken(rgba(255, 255, 255, 1), 20%);
+      }
+    }
   }
 
 }
 
 .footer {
   height: $footer-height;
-  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  width: 860px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 860px;
+
+  p {
+    font-size: 12px;
+    color: darken(rgba(255, 255, 255, 1), 20%);;
+  }
+
+  p.divider {
+    color: white;
+  }
 }
 
 .screen {
@@ -99,7 +135,7 @@ $top-background-color: #222;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     .carousel-enter {
       opacity: 0.01;
