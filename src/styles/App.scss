@@ -67,10 +67,11 @@ $top-background-color: #222;
   align-items: center;
 
   .title-text {
-    width: 860px;
+    width: min(100vw, 860px);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-left: min(calc(0.5 * 100vw), 43px);
     align-items: center;
 
     p {
@@ -99,20 +100,35 @@ $top-background-color: #222;
 }
 
 .footer-content {
-  width: 860px;
+  width: min(100vw, 860px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 860px;
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     color: darken(rgba(255, 255, 255, 1), 20%);;
   }
 
   p.divider {
     color: white;
+  }
+}
+
+@media(max-width: 860px) {
+  .footer-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .item {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
   }
 }
 
@@ -126,16 +142,28 @@ $top-background-color: #222;
 // Application Specific Screens
 .screen.home-screen {
 
+  .image-carousel-container {
+    height: min(571px, calc(0.664 * 100vw));
+
+    img {
+      height: min(571px, calc(0.664 * 100vw));
+    }
+  }
+
+  .image-carousel-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
   .image-carousel {
 
+    height: 100%;
+    width: 100%;
     cursor: pointer;
-    height: 571px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
 
     .carousel-enter {
       opacity: 0.01;
