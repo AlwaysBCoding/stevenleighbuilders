@@ -82,7 +82,7 @@ hr {
 
 .footer-content {
   width: min(100vw, 800px);
-  margin-left: -36px;
+  margin-left: -42px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

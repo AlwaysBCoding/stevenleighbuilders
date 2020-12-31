@@ -90,7 +90,7 @@ class HomeScreen extends Component {
       </div>
       <div className="footer">
         <div className="footer-content">
-          <p className="item address">PO BOX 422, PORT WASHINGTON NY, 11050</p>
+          <p className="item address">24 VANDERVENTER AVE, PORT WASHINGTON NY, 11050</p>
           <p className="item phone">TEL (516) 214-0412</p>
           <p className="item email">SLEIGH1@GMAIL.COM</p>
         </div>
