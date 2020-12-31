@@ -81,7 +81,8 @@ hr {
 }
 
 .footer-content {
-  width: min(100vw, 860px);
+  width: min(100vw, 800px);
+  margin-left: -36px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,6 +99,7 @@ hr {
 @media (max-width: 860px) {
   .footer-content {
     margin-top: 20px;
+    margin-left: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
