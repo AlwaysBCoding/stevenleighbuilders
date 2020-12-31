@@ -1,8 +1,19 @@
-import React, { Component } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import { Link } from 'react-router'
-import Spinner from '../components/Spinner'
-import _ from 'lodash'
+import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router';
+import Spinner from '../components/Spinner';
+import _ from 'lodash';
+
+const CAROUSEL_IMAGES = [
+  "../assets/images/PON.jpg",
+  "../assets/images/PON2.jpg",
+  "../assets/images/MIL.png",
+  "../assets/images/MIL2.jpg",
+  "../assets/images/MIL3.jpg",
+  "../assets/images/HAY.png",
+  "../assets/images/HAY2.jpg",
+  "../assets/images/CLA.png"
+];
 
 class Carousel extends Component {
 
@@ -31,16 +42,7 @@ class HomeScreen extends Component {
     this.state = {
       activeImageIndex: 0
     }
-    this.images = [
-      "../assets/images/PON.jpg",
-      "../assets/images/PON2.jpg",
-      "../assets/images/MIL.png",
-      "../assets/images/MIL2.jpg",
-      "../assets/images/MIL3.jpg",
-      "../assets/images/HAY.png",
-      "../assets/images/HAY2.jpg",
-      "../assets/images/CLA.png"
-    ]
+    this.images = CAROUSEL_IMAGES;
   }
 
   componentDidMount() {
@@ -83,7 +85,7 @@ class HomeScreen extends Component {
           <p>BUILDER</p>
         </div>
       </div>
-      <div className="image-carousel" onClick={() => { this._cycleImage() }}>
+      <div className="image-carousel-container" onClick={() => { this._cycleImage() }}>
         <Carousel imageSource={this.images[this.state.activeImageIndex]} />
       </div>
       <div className="footer">
